@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
     cvWebsite:'rafael.dev', cvAbout:''
   };
   const state = Object.assign({
-    personal: {...defaultPersonal}, photo:'assets/perfil.jpg', experiences:[], educations:[], skills:[], languages:[], projects:[],
+    personal: {...defaultPersonal}, photo:'Assets/perfil.jpg', experiences:[], educations:[], skills:[], languages:[], projects:[],
     selectedTemplate: sessionStorage.getItem('cvstudioTemplate') || localStorage.getItem('cvstudioTemplate') || 'minimal'
   }, JSON.parse(sessionStorage.getItem('cvstudioState') || '{}'));
   state.selectedTemplate = sessionStorage.getItem('cvstudioTemplate') || localStorage.getItem('cvstudioTemplate') || state.selectedTemplate || 'minimal';
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function mainSections(){ const p=state.personal; return `${section('Sobre mim', p.cvAbout?`<p>${esc(p.cvAbout)}</p>`:'')}${section('Experiência', expHTML())}${section('Formação', eduHTML())}${section('Habilidades', skillsHTML())}${section('Idiomas', langHTML())}${section('Projetos', projHTML())}`; }
   function sideSections(){ return `${section('Habilidades', skillsHTML())}${section('Idiomas', langHTML())}${section('Formação', eduHTML())}`; }
 
-  const photo = () => `<div class="tpl-photo-wrap"><img src="${esc(state.photo || 'assets/perfil.jpg')}" alt="" class="tpl-photo" id="resumePhoto"><button type="button" class="camera-badge" data-change-photo title="Trocar foto" aria-label="Trocar foto"><i data-lucide="camera"></i></button></div>`;
+  const photo = () => `<div class="tpl-photo-wrap"><img src="${esc(state.photo || 'Assets/perfil.jpg')}" alt="" class="tpl-photo" id="resumePhoto"><button type="button" class="camera-badge" data-change-photo title="Trocar foto" aria-label="Trocar foto"><i data-lucide="camera"></i></button></div>`;
   const nameRole = () => `<h2>${esc((state.personal.cvName||'').toUpperCase())}</h2>${state.personal.cvRole?`<h3>${esc((state.personal.cvRole||'').toUpperCase())}</h3>`:''}`;
 
   const renderers = {
@@ -536,7 +536,7 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       name: 'RAFAEL OLIVEIRA',
       role: 'DESENVOLVEDOR FRONTEND',
-      photo: 'assets/perfil.jpg',
+      photo: 'Assets/perfil.jpg',
       email: 'rafael@email.com', phone: '(11) 0000-0000', location: 'São Paulo, SP', linkedin: 'linkedin.com/in/rafaeloliveira', site: 'rafael.dev',
       about: 'Desenvolvedor Frontend especializado em React, Next.js e TypeScript, com foco em interfaces modernas, performance e experiências digitais escaláveis.',
       skills: [
@@ -552,7 +552,7 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       name: 'ANA SANTOS',
       role: 'UX/UI DESIGNER',
-      photo: 'assets/perfil3.jpg',
+      photo: 'Assets/perfil3.jpg',
       email: 'ana.santos@email.com', phone: '(11) 98888-0000', location: 'São Paulo, SP', linkedin: 'linkedin.com/in/anasantos', site: 'ana.design',
       about: 'Designer de produto focada em criar experiências simples, acessíveis e estratégicas, unindo pesquisa, prototipação e design system para produtos digitais.',
       skills: [
@@ -568,7 +568,7 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       name: 'CARLOS SILVA',
       role: 'GERENTE DE PROJETOS',
-      photo: 'assets/perfil2.jpg',
+      photo: 'Assets/perfil2.jpg',
       email: 'carlos.silva@email.com', phone: '(21) 97777-0000', location: 'Rio de Janeiro, RJ', linkedin: 'linkedin.com/in/carlossilva', site: 'carlos.pm',
       about: 'Gerente de Projetos com experiência em metodologias ágeis, liderança de equipes multidisciplinares e entrega de soluções digitais com foco em prazo, qualidade e resultado.',
       skills: [
