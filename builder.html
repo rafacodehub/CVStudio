@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Builder | CV Studio</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script defer src="script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body class="builder-body">
+  <aside class="builder-sidebar">
+    <div>
+      <a href="index.html" class="builder-logo">
+        <img src="assets/cvstudio-logo.png" alt="CV Studio">
+      </a>
+
+      <nav class="builder-menu">
+        <a href="#" class="active"><i data-lucide="edit-3"></i> Builder</a>
+        <a href="templates.html"><i data-lucide="layout-template"></i> Templates</a>
+        <a href="analytics.html"><i data-lucide="bar-chart-3"></i> Analytics</a>
+        <a href="exports.html" id="openExports"><i data-lucide="download"></i> Exportações</a>
+        <a href="settings.html"><i data-lucide="settings"></i> Configurações</a>
+      </nav>
+    </div>
+
+    <div class="builder-user">
+      <button type="button" class="help" id="openHelp"><i data-lucide="circle-help"></i> Ajuda</button>
+      <div class="user-card">
+        <div class="user-letter">A</div>
+        <div>
+          <strong>Administrador</strong>
+        </div>
+        <i data-lucide="chevron-down"></i>
+      </div>
+    </div>
+  </aside>
+
+  <main class="builder-main">
+    <header class="builder-topbar">
+      <span class="saved"><i data-lucide="check-circle-2"></i> Salvo automaticamente</span>
+
+      <div class="builder-actions">
+        <button type="button" id="previewFull"><i data-lucide="eye"></i> Pré-visualizar</button>
+        <button type="button" class="export" id="exportPdf"><i data-lucide="file-up"></i> Exportar</button>
+        <button type="button" id="darkToggle" title="Ativar dark mode" aria-label="Ativar dark mode"><svg viewBox="0 0 24 24" aria-hidden="true" class="theme-icon"><path d="M21 14.2A8.4 8.4 0 0 1 9.8 3a7.3 7.3 0 1 0 11.2 11.2Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="avatar-letter">R</div>
+      </div>
+    </header>
+
+    <section class="builder-workspace">
+      <section class="editor-panel">
+        <div class="editor-title">
+          <h1>Editor</h1>
+          <i data-lucide="sparkles"></i>
+        </div>
+
+        <div class="accordion open">
+          <button class="accordion-head" type="button">
+            <span><i data-lucide="contact"></i> Informações Pessoais</span>
+            <i data-lucide="chevron-up"></i>
+          </button>
+
+          <div class="accordion-body">
+            <label>Nome completo
+              <input type="text" data-target="cvName" value="Rafael Oliveira">
+            </label>
+
+            <label>Cargo ou área
+              <div class="na-row"><input type="text" data-target="cvRole" value="Desenvolvedor Frontend"><span class="na-check"><input type="checkbox" data-na="cvRole"> N/A</span></div>
+            </label>
+
+            <label>E-mail
+              <div class="na-row"><input type="text" data-target="cvEmail" value="seuemail@gmail.com"><span class="na-check"><input type="checkbox" data-na="cvEmail"> N/A</span></div>
+            </label>
+
+            <label>Telefone
+              <div class="na-row"><input type="text" data-target="cvPhone" value="(11) 0000-0000"><span class="na-check"><input type="checkbox" data-na="cvPhone"> N/A</span></div>
+            </label>
+
+            <label>Localização
+              <div class="na-row"><input type="text" data-target="cvLocation" value="São Paulo, SP"><span class="na-check"><input type="checkbox" data-na="cvLocation"> N/A</span></div>
+            </label>
+
+            <label>LinkedIn
+              <div class="na-row"><input type="text" data-target="cvLinkedin" value="linkedin.com/in/rafaeloliveira"><span class="na-check"><input type="checkbox" data-na="cvLinkedin"> N/A</span></div>
+            </label>
+
+            <label>Website
+              <div class="na-row"><input type="text" data-target="cvWebsite" value="rafael.dev"><span class="na-check"><input type="checkbox" data-na="cvWebsite"> N/A</span></div>
+            </label>
+
+            <label>Sobre mim
+              <div class="na-row">
+                <input type="text" data-target="cvAbout" value="">
+                <span class="na-check"><input type="checkbox" data-na="cvAbout"> N/A</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div class="accordion open">
+          <button class="accordion-head" type="button">
+            <span><i data-lucide="briefcase"></i> Experiência Profissional</span>
+            <i data-lucide="chevron-up"></i>
+          </button>
+          <div class="accordion-body">
+            <div id="experienceEditor" class="dynamic-list"></div>
+            <button type="button" class="add-btn" id="addExperience">+ Inserir experiência</button>
+          </div>
+        </div>
+
+        <div class="accordion open">
+          <button class="accordion-head" type="button">
+            <span><i data-lucide="graduation-cap"></i> Formação Acadêmica</span>
+            <i data-lucide="chevron-up"></i>
+          </button>
+          <div class="accordion-body">
+            <div id="educationEditor" class="dynamic-list"></div>
+            <button type="button" class="add-btn" id="addEducation">+ Inserir formação</button>
+          </div>
+        </div>
+
+        <div class="accordion open">
+          <button class="accordion-head" type="button">
+            <span><i data-lucide="badge-check"></i> Habilidades</span>
+            <i data-lucide="chevron-up"></i>
+          </button>
+          <div class="accordion-body">
+            <div id="skillsEditor" class="dynamic-list"></div>
+            <button type="button" class="add-btn" id="addSkill">+ Inserir habilidade</button>
+          </div>
+        </div>
+
+        <div class="accordion open">
+          <button class="accordion-head" type="button">
+            <span><i data-lucide="languages"></i> Idiomas</span>
+            <i data-lucide="chevron-up"></i>
+          </button>
+          <div class="accordion-body">
+            <div id="languagesEditor" class="dynamic-list"></div>
+            <button type="button" class="add-btn" id="addLanguage">+ Inserir idioma</button>
+          </div>
+        </div>
+
+        <div class="accordion open">
+          <button class="accordion-head" type="button">
+            <span><i data-lucide="folder-kanban"></i> Projetos</span>
+            <i data-lucide="chevron-up"></i>
+          </button>
+          <div class="accordion-body">
+            <div id="projectsEditor" class="dynamic-list"></div>
+            <button type="button" class="add-btn" id="addProject">+ Inserir projeto</button>
+          </div>
+        </div>
+
+        <div class="accordion open">
+          <button class="accordion-head" type="button">
+            <span><i data-lucide="layout-template"></i> Selecionar template</span>
+            <i data-lucide="chevron-up"></i>
+          </button>
+          <div class="accordion-body">
+            
+<div class="template-link-card">
+              <strong>Escolha seu template</strong>
+              <p>Os modelos ficam disponíveis na página de templates.</p>
+              <a href="templates.html" class="template-select-btn">Escolher template</a>
+              <p class="template-current" id="templateCurrent">Template atual: Minimal Clean</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section class="builder-preview">
+        <div class="live-resume real-template tpl-minimal" id="resumeToExport"></div>
+      </section>
+    </section>
+  </main>
+  <input type="file" id="photoInput" accept="image/*" hidden />
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+</body>
+</html>

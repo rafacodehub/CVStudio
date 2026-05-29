@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Analytics | CV Studio</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="builder-body analytics-body">
+  <aside class="builder-sidebar">
+    <div>
+      <a href="index.html" class="builder-logo"><img src="assets/cvstudio-logo.png" alt="CV Studio"></a>
+      <nav class="builder-menu">
+        <a href="builder.html"><i data-lucide="edit-3"></i> Builder</a>
+        <a href="templates.html"><i data-lucide="layout-template"></i> Templates</a>
+        <a href="analytics.html" class="active"><i data-lucide="bar-chart-3"></i> Analytics</a>
+        <a href="exports.html"><i data-lucide="download"></i> Exportações</a>
+        <a href="settings.html"><i data-lucide="settings"></i> Configurações</a>
+      </nav>
+    </div>
+    <div class="builder-user">
+      <button type="button" class="help" id="openHelp"><i data-lucide="circle-help"></i> Ajuda</button>
+      <div class="user-card"><div class="user-letter">A</div><div><strong>Administrador</strong></div><i data-lucide="chevron-down"></i></div>
+    </div>
+  </aside>
+  <main class="builder-main analytics-main">
+    <header class="builder-topbar">
+      <span class="saved"><i data-lucide="activity"></i> Análise do currículo</span>
+      <div class="builder-actions">
+        <a class="topbar-link" href="builder.html"><i data-lucide="arrow-left"></i> Voltar ao editor</a>
+        <button type="button" id="darkToggle" title="Ativar dark mode" aria-label="Ativar dark mode"><svg viewBox="0 0 24 24" aria-hidden="true" class="theme-icon"><path d="M21 14.2A8.4 8.4 0 0 1 9.8 3a7.3 7.3 0 1 0 11.2 11.2Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="avatar-letter">R</div>
+      </div>
+    </header>
+    <section class="analytics-shell">
+      <div class="analytics-page-head">
+        <div><span class="eyebrow">CV Studio</span><h1>Analytics</h1><p>Acompanhe o score ATS, palavras-chave, pontos fortes e sugestões de melhoria do currículo atual.</p></div>
+        <a class="analysis-refresh" href="builder.html"><i data-lucide="edit-3"></i> Editar currículo</a>
+      </div>
+      <section class="analytics-grid">
+        <article class="analytics-card score-card">
+          <h3>ATS Score</h3>
+          <div class="score-ring" id="atsRing" style="--score:0"><strong id="atsScore">0%</strong><span id="atsLabel">Aguardando dados</span></div>
+          <p id="atsSummary">Preencha seu currículo para melhorar a leitura por sistemas ATS.</p>
+        </article>
+        <article class="analytics-card details-card">
+          <h3>Análise detalhada</h3>
+          <div class="keyword-progress"><div><span>Palavras-chave</span><b id="keywordCount">0/25</b></div><progress id="keywordProgress" value="0" max="25"></progress></div>
+          <ul id="analysisDetails" class="analysis-list"></ul>
+        </article>
+        <article class="analytics-card suggestions-card">
+          <h3>Sugestões de melhoria</h3>
+          <ul id="analysisSuggestions" class="suggestions-list"></ul>
+        </article>
+        <article class="analytics-card keywords-card">
+          <h3>Palavras-chave encontradas</h3>
+          <div id="keywordChips" class="keyword-chips"></div>
+        </article>
+      </section>
+    </section>
+  </main>
+  <script src="https://unpkg.com/lucide@latest"></script>
+</body>
+</html>

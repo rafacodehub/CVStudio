@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exportações | CV Studio</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="builder-body exports-body">
+  <aside class="builder-sidebar">
+    <div>
+      <a href="index.html" class="builder-logo">
+        <img src="assets/cvstudio-logo.png" alt="CV Studio">
+      </a>
+      <nav class="builder-menu">
+        <a href="builder.html"><i data-lucide="edit-3"></i> Builder</a>
+        <a href="templates.html"><i data-lucide="layout-template"></i> Templates</a>
+        <a href="analytics.html"><i data-lucide="bar-chart-3"></i> Analytics</a>
+        <a href="exports.html" class="active"><i data-lucide="download"></i> Exportações</a>
+        <a href="settings.html"><i data-lucide="settings"></i> Configurações</a>
+      </nav>
+    </div>
+    <div class="builder-user">
+      <button type="button" class="help" id="openHelp"><i data-lucide="circle-help"></i> Ajuda</button>
+      <div class="user-card">
+        <div class="user-letter">A</div>
+        <div><strong>Administrador</strong></div>
+        <i data-lucide="chevron-down"></i>
+      </div>
+    </div>
+  </aside>
+
+  <main class="builder-main exports-main">
+    <header class="builder-topbar">
+      <span class="saved"><i data-lucide="check-circle-2"></i> Histórico de exportações</span>
+      <div class="builder-actions">
+        <a class="topbar-link" href="builder.html"><i data-lucide="arrow-left"></i> Voltar ao editor</a>
+        <button type="button" id="darkToggle" title="Ativar dark mode" aria-label="Ativar dark mode"><svg viewBox="0 0 24 24" aria-hidden="true" class="theme-icon"><path d="M21 14.2A8.4 8.4 0 0 1 9.8 3a7.3 7.3 0 1 0 11.2 11.2Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="avatar-letter">R</div>
+      </div>
+    </header>
+
+    <section class="exports-page-shell">
+      <div class="exports-page-head">
+        <div>
+          <span class="eyebrow">CV Studio</span>
+          <h1>Exportações</h1>
+          <p>Consulte os PDFs gerados, filtre por modelo, data, hora ou usuário e baixe novamente.</p>
+        </div>
+        <button type="button" id="clearExportsPage" class="danger-small">Limpar histórico</button>
+      </div>
+
+      <div class="export-filters export-filters-page">
+        <input id="pageFilterTemplate" placeholder="Filtrar por modelo">
+        <input id="pageFilterDate" placeholder="Filtrar por data">
+        <input id="pageFilterTime" placeholder="Filtrar por hora">
+        <input id="pageFilterUser" placeholder="Filtrar por usuário">
+      </div>
+
+      <div id="exportsPageList" class="exports-list exports-list-page"></div>
+    </section>
+  </main>
+  <script src="https://unpkg.com/lucide@latest"></script>
+</body>
+</html>

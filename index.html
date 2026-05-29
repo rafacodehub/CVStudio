@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV Studio</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header class="header">
+    <a href="index.html" class="logo-area">
+      <img src="assets/cvstudio-logo.png" alt="CV Studio" class="logo-img">
+    </a>
+
+    <nav class="nav">
+      <a href="templates.html">Templates</a>
+      <a href="recursos.html">Recursos</a>
+      <a href="#">Preços</a>
+      <a href="https://rafacodehub.github.io/rafaelamorim-portfolio/" target="_blank" rel="noopener">Blog</a>
+    </nav>
+
+    <div class="header-actions">
+      <a href="#" class="login">Entrar</a>
+      <a href="builder.html" class="btn btn-small">Começar agora</a>
+    </div>
+  </header>
+
+  <main class="hero">
+    <section class="hero-content">
+      <h1>Seu currículo<br><span>em outro nível.</span></h1>
+      <p>Crie currículos profissionais e modernos<br>com um editor visual intuitivo.</p>
+
+      <div class="hero-buttons">
+        <a href="builder.html" class="btn">Começar a criar</a>
+        <a href="templates.html" class="link-btn">Ver templates</a>
+      </div>
+
+      <div class="features premium-features">
+        <article class="feature-card premium-card">
+          <i data-lucide="sparkles"></i>
+          <h3>Editor Inteligente</h3>
+          <p>Campos dinâmicos, preview em tempo real e currículo sem travar.</p>
+        </article>
+
+        <article class="feature-card premium-card">
+          <i data-lucide="layout-template"></i>
+          <h3>Templates Profissionais</h3>
+          <p>Modelos reais para áreas modernas, corporativas e executivas.</p>
+        </article>
+
+        <article class="feature-card premium-card">
+          <i data-lucide="file-down"></i>
+          <h3>Exportação PDF Premium</h3>
+          <p>PDF em uma página, histórico de exportações e download rápido.</p>
+        </article>
+
+        <article class="feature-card premium-card">
+          <i data-lucide="chart-no-axes-combined"></i>
+          <h3>ATS Score Real</h3>
+          <p>Análise de currículo com nota, palavras-chave e sugestões.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="resume-wrapper">
+      <div class="resume-card">
+        <aside class="resume-sidebar">
+          <div class="profile">
+            <img src="assets/perfil.jpg" alt="Foto de perfil" class="profile-img" id="heroPhoto">
+          </div>
+
+          <div class="contact-list" id="heroContact">
+            <p><i data-lucide="mail"></i> rafael@email.com</p>
+            <p><i data-lucide="phone"></i> (11) 0000-0000</p>
+            <p><i data-lucide="map-pin"></i> São Paulo, SP</p>
+            <p><i data-lucide="globe"></i> linkedin.com/in/rafaeloliveira</p>
+            <p><i data-lucide="globe"></i> rafael.dev</p>
+          </div>
+
+          <div class="cv-block">
+            <h4>Habilidades</h4>
+            <div id="heroSkills">
+              <div class="skill"><span>JavaScript</span><b><i></i><i></i><i></i><i></i><em></em></b></div>
+              <div class="skill"><span>TypeScript</span><b><i></i><i></i><i></i><i></i><em></em></b></div>
+              <div class="skill"><span>React</span><b><i></i><i></i><i></i><i></i><em></em></b></div>
+              <div class="skill"><span>Next.js</span><b><i></i><i></i><i></i><em></em><em></em></b></div>
+              <div class="skill"><span>Tailwind CSS</span><b><i></i><i></i><i></i><i></i><em></em></b></div>
+              <div class="skill"><span>Node.js</span><b><i></i><i></i><i></i><em></em><em></em></b></div>
+            </div>
+          </div>
+
+          <div class="cv-block" id="heroEducationBlock">
+            <h4>Formação</h4>
+            <strong id="heroEducationCourse">Ciência da Computação</strong>
+            <p id="heroEducationSchool">Universidade de São Paulo</p>
+            <p id="heroEducationPeriod">2019 - 2023</p>
+          </div>
+        </aside>
+
+        <article class="resume-main">
+          <header class="resume-title">
+            <h2 id="heroName">RAFAEL OLIVEIRA</h2>
+            <p id="heroRole">DESENVOLVEDOR FRONTEND</p>
+          </header>
+
+          <section class="section">
+            <h4>Sobre mim</h4>
+            <p id="heroAbout">Desenvolvedor Frontend apaixonado por criar experiências digitais incríveis. Especializado em React, Next.js e JavaScript. Busco sempre escrever código limpo e escalável e transformar ideias em soluções modernas.</p>
+          </section>
+
+          <section class="section">
+            <h4>Experiência</h4>
+            <div id="heroExperience">
+              <div class="job">
+                <h5>Desenvolvedor Frontend Pleno</h5>
+                <p>Empresa ABC · 2022 - Presente</p>
+                <ul>
+                  <li>Desenvolvimento de interfaces modernas com React e Next.js</li>
+                  <li>Colaboração com time de design para implementar UI/UX</li>
+                  <li>Otimização de performance e SEO das aplicações</li>
+                </ul>
+              </div>
+
+              <div class="job">
+                <h5>Desenvolvedor Frontend Júnior</h5>
+                <p>Empresa XYZ · 2020 - 2022</p>
+                <ul>
+                  <li>Criação de componentes reutilizáveis</li>
+                  <li>Manutenção de aplicações existentes</li>
+                  <li>Integração com APIs RESTful</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="section">
+            <h4>Projetos</h4>
+            <div class="job">
+              <h5>Portfólio Pessoal</h5>
+              <p>Aplicação web desenvolvida com Next.js e Tailwind CSS.</p>
+              
+            </div>
+          </section>
+        </article>
+      </div>
+    </section>
+  </main>
+  <section class="home-social-proof" aria-label="Prova social">
+    <article><strong>4.9/5</strong><span>Avaliação dos usuários</span></article>
+    <article><strong>Beta fechado</strong><span>Produto em evolução com feedback real</span></article>
+    <article><strong>Dev-first</strong><span>Criado por desenvolvedores para profissionais</span></article>
+  </section>
+
+  <section class="home-templates-showcase" id="templates-reais">
+    <div class="home-section-title">
+      <span>Templates reais</span>
+      <h2>Escolha currículos que realmente mudam o visual.</h2>
+      <p>Minimal Clean, Corporate Word, Creative, Executive Black e Gold Premium com estruturas diferentes.</p>
+    </div>
+
+    <div class="home-template-carousel" aria-label="Carrossel de templates">
+      <article class="home-template-card active" data-home-template="minimal">
+        <div class="template-preview-card prev-minimal"><div class="p-side"><span></span><p></p><p></p><p></p></div><div class="p-main"><h3></h3><h4></h4><p></p><p></p><p></p><h4></h4><p></p></div></div>
+        <strong>Minimal Clean</strong>
+      </article>
+      <article class="home-template-card" data-home-template="word">
+        <div class="template-preview-card prev-word"><h3></h3><div></div><p></p><p></p><h4></h4><p></p><p></p><h4></h4><p></p></div>
+        <strong>Corporate Word</strong>
+      </article>
+      <article class="home-template-card" data-home-template="creative">
+        <div class="template-preview-card prev-creative"><div class="blob"></div><span></span><h3></h3><p></p><p></p><h4></h4><p></p><p></p></div>
+        <strong>Creative</strong>
+      </article>
+      <article class="home-template-card" data-home-template="black">
+        <div class="template-preview-card prev-black"><div class="top"><span></span><h3></h3></div><div class="cols"><div><p></p><p></p><p></p></div><div><h4></h4><p></p><p></p><h4></h4><p></p></div></div></div>
+        <strong>Executive Black</strong>
+      </article>
+      <article class="home-template-card" data-home-template="gold">
+        <div class="template-preview-card prev-gold"><div class="p-side"><span></span><p></p><p></p><p></p></div><div class="p-main"><h3></h3><h4></h4><p></p><p></p><p></p></div></div>
+        <strong>Gold Premium</strong>
+      </article>
+    </div>
+
+    <a href="templates.html" class="btn showcase-btn">Ver todos os templates</a>
+  </section>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+</body>
+</html>
