@@ -7,7 +7,7 @@ CVStudio is a modern resume builder designed to help professionals create visual
 ---
 ## 🌐 Live Demo
 
-https://rafacodehub.github.io/rafaelamorim-portfolio/
+https://rafacodehub.github.io/CVStudio/index.html
 
 ### 🎨 Professional Resume Builder
 
